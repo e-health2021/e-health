@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cliniques",
+  "info": {
+    "name": "Clinique"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "speciality": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tel_clinic": {
+      "type": "biginteger"
+    },
+    "tel_emergency": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "ICE": {
+      "type": "biginteger"
+    },
+    "doctors": {
+      "model": "doctors",
+      "via": "cliniques"
+    }
+  }
+}

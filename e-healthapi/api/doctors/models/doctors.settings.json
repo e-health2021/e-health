@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "doctors",
+  "info": {
+    "name": "doctors",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "speciality": {
+      "type": "string"
+    },
+    "sexe": {
+      "type": "string"
+    },
+    "subscribed": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "password"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "photo_profile": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "tel_perso": {
+      "type": "biginteger"
+    },
+    "tel_cabinet": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "cliniques": {
+      "via": "doctors",
+      "collection": "clinique"
+    }
+  }
+}
